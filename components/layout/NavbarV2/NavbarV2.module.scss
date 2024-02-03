@@ -1,0 +1,264 @@
+.Navbar {
+    position: relative;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    margin: 1rem auto 1rem;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: var(--shadow-mid);
+    border-radius: 1rem;
+    max-width: calc(var(--breakpoint-xxl) - 9.6rem);
+    width: 100%;
+    z-index: 499;
+
+    &_Logo {
+        font-size: 2.5rem;
+        font-weight: 500;
+        a {
+            color: var(--main-color);
+            text-decoration: none;
+        }
+    }
+
+    &_Links li {
+        display: inline-block;
+        margin: 0 1.5rem;
+
+        a {
+            position: relative;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            display: inline-block;
+            padding: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        a:hover {
+            background-color: var(--gradient-color);
+            svg path {
+                fill: #fff;
+                stroke: var(--gradient-color);
+            }
+        }
+
+        a::after {
+            content: attr(alt);
+            display: block;
+            padding: 3px 8px;
+            color: white;
+            position: absolute;
+            bottom: calc(-0.8rem);
+            left: 50%;
+            transform: translate(-50%, 100%);
+            background-color: var(--gradient-color);
+            font-size: 11px;
+            letter-spacing: 1px;
+            border-radius: 20px;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            outline: none;
+        }
+
+        a.Link_Active {
+            background-color: var(--main-color);
+            svg path {
+                fill: #fff;
+                stroke: var(--main-color);
+            }
+
+            &::after {
+                background-color: var(--main-color);
+            }
+        }
+
+        a:hover::after {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &_UserImage {
+        width: 3.7rem;
+        height: 3.7rem;
+        position: relative;
+        border-radius: 50%;
+        overflow: hidden;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .USER {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        cursor: pointer;
+
+        .UserInformation {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            gap: 0.5rem;
+            min-width: 22rem;
+
+            .UserImage {
+                width: 3.7rem;
+                height: 3.7rem;
+                position: relative;
+                border-radius: 50%;
+                overflow: hidden;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .UserText {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                min-width: 15rem;
+
+                h2 {
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                    // Make the text overflow ellipsis
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    width: 100%;
+                    min-height: 1.7rem;
+                }
+
+                p {
+                    font-size: 1.1rem;
+                    font-weight: 400;
+                    color: var(--text-color);
+                }
+            }
+        }
+    }
+
+    &_Login {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        transform: translateY(108%);
+        list-style: none;
+        background-color: #fff;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.16);
+        border-radius: 1rem;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.25s ease-in-out;
+
+        &__Ul {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        a {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 1rem 3rem;
+            text-decoration: none;
+            color: var(--icon-color);
+
+            &:not(.Navbar_LogOut):hover {
+                color: var(--gradient-color);
+                background-color: rgba(#656565, 0.06);
+            }
+
+            div {
+                position: relative;
+                width: 2rem;
+                height: 2rem;
+                margin-right: 0.5rem;
+            }
+
+            &.Navbar_LogOut {
+                color: #f00;
+                text-transform: uppercase;
+                display: flex;
+                justify-content: center;
+                padding: 2rem 3.2rem;
+                
+                &:hover {
+                    background-color: rgba(#656565, 0.06);
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 767px) {
+        width: calc(100% - 1rem);
+
+        &_UserImage {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 600px) and (min-width: 500px) {
+        flex-direction: column;
+    }
+
+    @media only screen and (max-width: 500px) {
+        padding: 1rem;
+        margin: 1rem 0.5rem 1rem;
+        justify-content: center;
+        box-shadow: var(--shadow-small);
+        border-radius: 1rem 1rem 1rem 1rem;
+        width: calc(100% - 1rem);
+        &_Links {
+            margin: auto;
+            li {
+                margin: initial;
+            }
+            li:not(:last-child) {
+                margin-right: 1.2rem;
+            }
+            li:not(:first-child) {
+                margin-left: 1.2rem;
+            }
+        }
+        &_Logo {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 340px) {
+        &_Links {
+            li {
+                margin: initial;
+            }
+            li:not(:last-child) {
+                margin-right: 1rem;
+            }
+            li:not(:first-child) {
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        width: calc(768px - 3.2rem);
+    }
+    @media only screen and (min-width: 1024px) {
+        width: calc(1024px - 6.4rem);
+    }
+    @media only screen and (min-width: 1280px) {
+        width: calc(1280px - 8rem);
+    }
+    @media only screen and (min-width: 1536px) {
+        width: calc(1536px - 9.6rem);
+    }
+}

@@ -1,0 +1,50 @@
+.InputsContainer {
+  grid-column: 2 / 3;
+  grid-row: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &_InputDate {
+    position: relative;
+
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+
+      &::-webkit-calendar-picker-indicator {
+        appearance: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    label {
+      display: block;
+      width: 100%;
+      padding: 1.4rem 1.5rem;
+      border: 0;
+      box-shadow: 0 0 0.5rem rgba(#000, 0.16);
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      color: rgb(116, 116, 116);
+      cursor: pointer;
+
+      &:active {
+        box-shadow: inset 0 0 0.5rem rgba(#000, 0.16);
+      }
+
+      &.Selected {
+        color: var(--main-color);
+      }
+    }
+  }
+}

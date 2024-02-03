@@ -1,0 +1,67 @@
+.CourseCard{
+    max-width: 35rem;
+    padding: 1rem 1rem 1.5rem;
+    display: inline-block;
+    background-color: white;
+    box-shadow: var(--shadow-mid);
+    border-radius: 3px;
+
+    &_Image {
+        position: relative;
+        height: 20rem;
+        margin-bottom: 2rem;
+        border-radius: 3px;
+        overflow: hidden;
+
+        img {
+            max-height: 20rem !important;
+            width: 33rem !important;
+            object-fit: cover;
+        }
+    }
+
+    h3 {
+        padding: .5rem 1rem;
+        font-size: 2.2rem;
+        height: 6rem;
+        font-weight: 400;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &_Description{
+        padding: .5rem 1rem;
+        font-size: 1.4rem;
+        height: 9rem;
+        font-weight: 400;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #656565;
+    }
+}
+
+// Media Queries Part
+@media only screen and (max-width: 1536px) {
+    .CourseCard{
+        max-width: 30rem;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .CourseCard {
+        max-width: 35rem;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 600px) {
+    .CourseCard {
+        max-width: 35rem;
+        width: 100%;
+    }
+}

@@ -1,0 +1,39 @@
+.commentForm {
+    margin-top: 30px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    background-color: white;
+    padding: 3rem;
+    border-radius: 1rem;
+}
+
+.inputGroup {
+    margin-bottom: 10px;
+}
+
+.inputGroup label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.inputGroup textarea {
+    min-height: 20rem;
+}
+
+.submitButton {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

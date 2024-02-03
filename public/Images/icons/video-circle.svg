@@ -1,0 +1,10 @@
+<svg id="video-circle" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+  <rect id="video-circle-2" data-name="video-circle" width="70" height="70" fill="none"/>
+  <g id="vuesax_bulk_video-circle" data-name="vuesax/bulk/video-circle">
+    <g id="Group">
+      <path id="Vector" d="M58.333,29.167A29.167,29.167,0,1,1,29.167,0,29.167,29.167,0,0,1,58.333,29.167Z" transform="translate(5.833 5.833)" fill="#fff" opacity="0.4"/>
+      <path id="Vector-2" data-name="Vector" d="M0,10.549V6.232C0,.661,3.938-1.585,8.75,1.186l3.733,2.158L16.217,5.5c4.813,2.771,4.813,7.321,0,10.092l-3.733,2.158L8.75,19.911C3.938,22.682,0,20.407,0,14.865Z" transform="translate(26.542 24.451)" fill="#fff"/>
+      <path id="Vector-3" data-name="Vector" d="M0,0H70V70H0Z" fill="none" opacity="0"/>
+    </g>
+  </g>
+</svg>

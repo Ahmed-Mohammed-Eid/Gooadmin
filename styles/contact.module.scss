@@ -1,0 +1,275 @@
+.ContentContainer {
+    display: flex;
+    background-color: #fff;
+    min-height: calc(100vh - 14rem);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-mid);
+
+    .Left,
+    .Right {
+        padding: 10rem 5rem;
+        width: 50%;
+    }
+
+    .Left {
+        position: relative;
+        background-color: #9747FF10;
+        border-radius: 1rem 0 0 1rem;
+
+        & > p {
+            font-size: 1.8rem;
+            color: #707070;
+            text-transform: uppercase;
+            margin-bottom: 12rem;
+        }
+
+        .Image_Container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .Right {
+        position: relative;
+
+        .Form_Container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 1rem;
+
+            form {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                padding: 5rem 2rem;
+
+                .Input_Container {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    padding: 5rem 0;
+
+                    .Input_Icon {
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                        height: 4.5rem;
+                        padding: .2rem .2rem .2rem;
+                        margin-bottom: 1rem;
+                        border-radius: .3rem;
+                        box-shadow: inset var(--shadow-mid);
+
+                        .Icon {
+                            width: 4.5rem;
+                            height: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                        & > div{
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                        & > select {
+                            padding-left: 1rem;
+                        }
+                    }
+
+                    .Input {
+                        width: 100%;
+                        height: 100%;
+                        border: none;
+                        outline: none;
+                        font-size: 1.4rem;
+                        color: #707070;
+                        caret-color: var(--heighlight-color);
+                    }
+
+                    .TextArea {
+                        width: 100%;
+                        height: 20rem;
+                        min-height: 20rem;
+                        outline: none;
+                        font-size: 1.4rem;
+                        color: #707070;
+                        margin-bottom: 2rem;
+                        padding: 2rem;
+                        caret-color: var(--heighlight-color);
+                        box-shadow: inset var(--shadow-mid);
+                        border: 0;
+                        border-radius: .3rem;
+                        resize: vertical;
+                    }
+
+                    .Button {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        max-width: 20rem;
+                        width: 100%;
+                        height: 4rem;
+                        border: none;
+                        outline: none;
+                        font-size: 1.8rem;
+                        color: #fff;
+                        background-color: var(--main-color);
+                        border-radius: .3rem;
+                        cursor: pointer;
+                        transition: all 0.3s ease-in-out;
+                        margin-left: auto;
+
+                        svg path {
+                            fill: #fff;
+                        }
+
+                        &:hover {
+                            background-color: #9747FF80;
+                        }
+                    }
+                }
+            }
+        }
+
+        .Icons_Container {
+            position: absolute;
+            bottom: 6rem;
+            left: 0rem;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    @media only screen and (max-width: 1024px) {
+        .Right {
+            padding: 10rem 1rem;
+        }
+
+
+        .Left {
+
+            & > p {
+                font-size: 1.7rem;
+            }
+
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        flex-direction: column;
+        min-height: calc(100vh - 10rem);
+
+        .Left,
+        .Right {
+            width: 100%;
+            padding: 5rem;
+        }
+
+        .Left {
+            border-radius: 1rem 1rem 0 0;
+            padding-bottom: 10rem;
+
+            & > p {
+                margin-bottom: 5rem;
+            }
+        }
+
+        .Right {
+            border-radius: 0 0 1rem 1rem;
+
+            .Form_Container{
+                form{
+                    padding: 0;
+
+                    .Button{
+                        margin-left: 0!important;
+                        align-self: flex-start;
+                        max-width: 100% !important;
+                    }
+                }
+            }
+
+            .Icons_Container {
+                bottom: initial;
+                left: 0;
+                top: 0;
+                transform: translate(5rem, -50%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
+
+.CourseContainer{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    border-radius: .3rem;
+    box-shadow: var(--shadow-mid);
+    margin-bottom: 2rem;
+
+    .HeaderAndPrice{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        h3{
+            font-size: 1.8rem;
+            color: #000000;
+            text-transform: uppercase;
+        }
+
+        span{
+            display: inline-block;
+            padding: .3rem 1rem;
+            border: 1px solid var(--main-color);
+            border-radius: .3rem;
+            font-size: 1.2rem;
+            color: var(--main-color);
+        }
+    }
+    
+    p{
+        font-size: 1.6rem;
+        color: #707070;
+        overflow-wrap: anywhere;
+        // set max height 4 lines
+        max-height: 8rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4; /* number of lines to show */
+        -webkit-box-orient: vertical;
+    }
+}
+
+.LEFTCOURSES{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

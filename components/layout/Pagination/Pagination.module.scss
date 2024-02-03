@@ -1,0 +1,42 @@
+.Pagination {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+
+    &_Container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border: 1px solid var(--heighlight-color);
+        border-radius: 4px;
+        box-shadow: var(--shadow-small);
+        cursor: pointer;
+
+        &.Active{
+            background-color: var(--heighlight-color);
+            color: white;
+        }
+
+        & > *{
+            pointer-events: none;
+        }
+
+        &:not(:last-child) {
+            margin-right: .25rem;
+        }
+
+        &:not(:first-child) {
+            margin-left: .25rem;
+        }
+    }
+}

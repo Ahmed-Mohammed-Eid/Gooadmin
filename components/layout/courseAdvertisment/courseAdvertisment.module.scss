@@ -1,0 +1,41 @@
+.course_advertisment {
+  padding: .5rem 2rem;
+  display: flex;
+  align-items: center;
+  margin: 1rem auto 1rem;
+  justify-content: center;
+  background-color: white;
+  box-shadow: var(--shadow-mid);
+  border-radius: .8rem;
+  max-width: calc(var(--breakpoint-xxl) - 9.6rem);
+  width: 100%;
+  z-index: 499;
+
+  p{
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: transform 0.12s ease-in-out;
+    animation: textColorGradientAnimation 2s infinite linear alternate;
+    // TEXT GRADIENT
+    background: linear-gradient(90deg, #b05cff 0%, #FF0000 50%, #467afa 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+
+    &:active{
+      transform: scale(0.9);
+    }
+  }
+}
+
+// COLOR ANIMATION
+@keyframes textColorGradientAnimation {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}

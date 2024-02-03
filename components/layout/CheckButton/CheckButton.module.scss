@@ -1,0 +1,18 @@
+.CheckButton {
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--color-white);
+    border: none;
+    box-shadow: 0 0 0.6rem rgba(#000, 0.2);
+    border-radius: 3px;
+    transition: box-shadow .3s ease-in-out;
+    cursor: pointer;
+
+    img {
+        line-height: 6rem;
+    }
+    
+    &:active{
+        box-shadow: inset 0 0 0.6rem rgba(#000, 0.2);
+    }
+}

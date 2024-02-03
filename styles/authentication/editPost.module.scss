@@ -1,0 +1,82 @@
+.PageContainer {
+    min-height: calc(100vh - 14rem);
+    display: flex;
+    align-items: center;
+}
+
+.CreatePost {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    position: relative;
+    width: 100%;
+    margin-top: 4rem;
+    background: white;
+    box-shadow: var(--shadow-mid);
+    padding: 5rem 5rem 12rem 5rem;
+    border-radius: 1rem;
+
+    & > h1 {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 5rem;
+        transform: translateY(-50%);
+        font-family: var(--main-font);
+        font-size: 1.5rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        background: var(--main-color);
+        padding: .5rem 2rem;
+        color: white;
+        border-radius: 30px;
+    }
+
+    .Left {
+        display: grid;
+        grid-template-rows: 30rem auto;
+        height: fit-content;
+
+        & > section {
+            grid-column: initial;
+            grid-row: initial;
+        }
+
+        &_Heading {
+            display: block;
+            height: 5rem;
+            width: 100%;
+            padding: 1.4rem 1.5rem;
+            border: 0;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            caret-color: var(--main-color);
+            color: var(--main-color);
+            box-shadow: inset var(--shadow-mid);
+        }
+
+        &_Publish {
+            input[type="checkbox"] {
+                display: none;
+            }
+
+            label {
+                padding: .5rem 1.5rem;
+                background: var(--color-white);
+                box-shadow: var(--shadow-mid);
+                color: #656565;
+                cursor: pointer;
+            }
+
+            input[type="checkbox"]:checked + label {
+                color: var(--heighlight-color);
+                box-shadow: inset var(--shadow-mid);
+            }
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 5rem 1rem 10rem;
+    }
+}

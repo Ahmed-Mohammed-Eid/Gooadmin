@@ -1,0 +1,40 @@
+.CheckBox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+
+  p{
+    color: var(--main-color);
+    font-size: 1.7rem;
+    text-transform: uppercase;
+  }
+
+  &_Input {
+    display: none;
+  }
+
+  &_Label {
+    position: relative;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: block;
+    box-shadow: inset 0 0 0.5rem var(--gradient-color);
+    cursor: pointer;
+  }
+
+  &_Input:checked + &_Label::before {
+    content: "\2713";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 2.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--gradient-color);
+  }
+}

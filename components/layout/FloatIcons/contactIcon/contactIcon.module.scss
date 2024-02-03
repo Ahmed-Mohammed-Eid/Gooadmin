@@ -1,0 +1,70 @@
+.ContactIcon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.25s ease-in-out;
+
+    &:active {
+        transform: scale(0.9);
+
+        .tooltip {
+            visibility: hidden !important;
+            opacity: 0 !important;
+        }
+    }
+}
+
+.icon {
+    border-radius: 50%;
+    fill: #000;
+    cursor: pointer;
+}
+
+.tooltip {
+    visibility: hidden;
+    width: 100px;
+    background-color: var(--main-color);
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    left: calc(100% + 10px);
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--main-color);
+}
+
+.ContactIcon:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+    .tooltip {
+        display: none;
+    }
+
+    .tooltip::after {
+        display: none;
+    }
+}

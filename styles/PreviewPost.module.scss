@@ -1,0 +1,191 @@
+.ContentContainer {
+    display: flex;
+    gap: 1rem;
+    min-height: calc(100vh - 10rem);
+
+    .Left {
+        width: 75%;
+    }
+
+    .Top {
+        position: relative;
+        padding: 1.25rem;
+        background-color: #ffffff;
+        border-radius: 1rem;
+        box-shadow: var(--shadow-mid);
+
+        .MainImage {
+            border-radius: 1rem;
+            overflow: hidden;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .Content {
+            .HeaderAndDate {
+                padding: 1rem;
+
+                h1 {
+                    font-family: var(--secondary-font);
+                    font-size: 2.5rem;
+                    font-weight: 400;
+                }
+
+                .Author{
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+                    color: #656565;
+                    margin: 3rem 0 2rem;
+
+                    .AuthorImage{
+                        width: 5rem;
+                        height: 5rem;
+                        border-radius: 50%;
+                        overflow: hidden;
+
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .AuthorName{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        h2 {
+                            font-family: var(--main-font);
+                            font-size: 1.8rem;
+                            font-weight: 400;
+                        }
+
+                        p {
+                            display: flex;
+                            align-items: center;
+                            margin-top: .7rem;
+                            gap: .6rem;
+                            font-size: 1.3rem;
+                            color: #656565;
+                        }
+                    }
+                }
+
+            }
+
+            .Categories {
+                span {
+                    display: inline-block;
+                    padding: .5rem 1rem;
+                    margin: .5rem;
+                    background-color: white;
+                    border-radius: .5rem;
+                    font-size: .9rem;
+                    font-weight: 400;
+                    text-transform: capitalize;
+                    color: var(--main-color);
+                    box-shadow: 0 0 3px rgba(#9747FF, .3);
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+
+    .Bottom {
+        padding: 5rem 3rem;
+        color: #656565;
+        background-color: #ffffff;
+        border-radius: 1rem;
+        box-shadow: var(--shadow-mid);
+        margin-top: 1rem;
+        font-size: 1.7rem;
+        line-height: 1.3;
+
+        h1,h2,h3,h4,h5,h6 {
+            font-family: var(--main-font);
+            font-weight: 400;
+            margin: 1.7rem 0;
+            color: #333;
+        }
+
+        //Link
+        a:not(:has(button)) {
+            position: relative;
+            color: var(--main-color);
+            text-decoration: none;
+            font-weight: 400;
+            transition: all .2s ease-in-out;
+        }
+
+        a > button {
+            padding: .5rem 2.5rem;
+            background-color: var(--heighlight-color);
+            color: white;
+            font-size: 1.7rem;
+            text-transform: capitalize;
+            border-radius: .7rem;
+            box-shadow: var(--shadow-mid);
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+            cursor: pointer;
+        }
+    }
+
+    //  Right Side
+    .Right {
+        position: relative;
+        width: 25%;
+    }
+
+    @media only screen and (max-width: 1280px) {
+        flex-wrap: wrap;
+        .Left, .Right {
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .Top{
+            .MainImage {
+                height: 22rem;
+
+                & > span{
+                    height: 100%!important;
+                }
+            }
+
+            .Content {
+                .HeaderAndDate {
+                    h1{
+                        font-size: 2rem;
+                    }
+                }
+
+                .Categories {
+                    span {
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+
+        }
+
+        .Bottom {
+            padding: 2rem;
+        }
+    }
+}
+
+.Comments_Section{
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-mid);
+    margin-top: 1rem;
+    padding: 3rem;
+
+    h2{
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+    }
+}

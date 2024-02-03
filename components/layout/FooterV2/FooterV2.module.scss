@@ -1,0 +1,29 @@
+.Footer{
+    padding: 1rem;
+    background-color: white;
+    box-shadow: var(--shadow-mid);
+    margin: 1rem auto;
+    text-align: center;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+
+
+    @media only screen and (max-width: 767px) {
+        width: calc(100% - 1rem);
+        font-size: 1.2rem;
+    }
+    @media only screen and (min-width: 768px) {
+        width: calc(768px - 3.2rem);
+    }
+    @media only screen and (min-width: 1024px) {
+        width: calc(1024px - 6.4rem);
+    }
+    @media only screen and (min-width: 1280px) {
+        width: calc(1280px - 8rem);
+    }
+    @media only screen and (min-width: 1536px) {
+        width: calc(1536px - 9.6rem);
+    }
+}
+
+

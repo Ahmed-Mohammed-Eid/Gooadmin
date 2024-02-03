@@ -1,0 +1,118 @@
+.Project {
+    max-width: 35rem;
+    padding: 1rem 1rem 2.5rem;
+    background-color: white;
+    box-shadow: var(--shadow-mid);
+    border-radius: 3px;
+    transition: transform .2s ease-in-out;
+
+    &:hover{
+        transform: translateY(-5px);
+    }
+
+    &_Image {
+        position: relative;
+        height: 20rem;
+        margin-bottom: 2rem;
+        border-radius: 3px;
+        overflow: hidden;
+
+        img {
+            max-height: 20rem !important;
+            width: 33rem !important;
+            object-fit: cover;
+        }
+    }
+
+    .Data_P1{
+        display: flex;
+        justify-content: space-between;
+        padding: .5rem 1rem;
+    }
+
+    &_Name {
+        h3 {
+            font-size: 2.5rem;
+            font-weight: 400;
+        }
+        time {
+            font-size: 1.3rem;
+        }
+    }
+
+    &_Open{
+        text-decoration: none;
+        cursor: pointer;
+        color: #000;
+    }
+
+    &_Links {
+        display: flex;
+
+        a{
+            display: inline-block;
+            width: 4rem;
+            height: 4rem;
+            padding: 0.5rem;
+            border-radius: 3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 4px rgba(#000, 0.16);
+            
+            &:first-child{
+                margin-right: 1rem;
+            }
+            
+            &:active{
+                box-shadow: inset 0 0 4px rgba(#000, 0.16);
+            }
+        }
+    }
+
+    .Description{
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 1.6rem;
+        color: #656565;
+        margin-top: 1rem;
+        padding: 0 1rem;
+    }
+}
+
+// Media Queries Part
+@media only screen and (max-width: 1536px) {
+    .Project{
+        max-width: 30rem;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .Project{
+        max-width: 35rem;
+
+        &:last-child{
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 600px) {
+    .Project {
+        max-width: 35rem;
+        width: 100%;
+
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .Project {
+
+        &:last-child{
+            display: block;
+        }
+    }
+}

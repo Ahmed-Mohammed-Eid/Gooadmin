@@ -1,0 +1,21 @@
+.Icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 0;
+    width: 4.4rem;
+    height: 4.4rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: var(--shadow-mid);
+
+    &:hover{
+        transform: translateY(-3px);
+    }
+
+    &:active{
+        box-shadow: inset var(--shadow-mid);
+    }
+}

@@ -1,0 +1,12 @@
+<svg id="Project_Technologies" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23">
+  <rect id="code-circle" width="23" height="23" fill="none"/>
+  <g id="vuesax_bulk_code-circle" data-name="vuesax/bulk/code-circle">
+    <g id="Group">
+      <path id="Vector" d="M0,0H23V23H0Z" fill="none" opacity="0"/>
+      <path id="Vector-2" data-name="Vector" d="M19.333,9.667A9.667,9.667,0,1,1,9.667,0,9.667,9.667,0,0,1,19.333,9.667Z" transform="translate(1.833 1.833)" fill="#2d264b" opacity="0.4"/>
+      <path id="Vector-3" data-name="Vector" d="M2.519,5.039a.68.68,0,0,1-.486-.2L.2,3a.692.692,0,0,1,0-.972L2.033.2A.687.687,0,1,1,3,1.171L1.657,2.519,3,3.866a.692.692,0,0,1,0,.972.68.68,0,0,1-.486.2Z" transform="translate(5.071 8.981)" fill="#2d264b"/>
+      <path id="Vector-4" data-name="Vector" d="M.685,5.039a.68.68,0,0,1-.486-.2.692.692,0,0,1,0-.972L1.547,2.519.2,1.171A.687.687,0,0,1,1.171.2L3,2.033A.692.692,0,0,1,3,3L1.171,4.838a.68.68,0,0,1-.486.2Z" transform="translate(14.725 8.981)" fill="#2d264b"/>
+      <path id="Vector-5" data-name="Vector" d="M.682,5.66A.657.657,0,0,1,.416,5.6.683.683,0,0,1,.059,4.7L1.892.416a.676.676,0,0,1,.9-.358.683.683,0,0,1,.358.908L1.315,5.247a.69.69,0,0,1-.632.413Z" transform="translate(9.901 8.663)" fill="#2d264b"/>
+    </g>
+  </g>
+</svg>

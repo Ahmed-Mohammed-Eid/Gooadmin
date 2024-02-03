@@ -1,0 +1,354 @@
+.ContentContainer {
+  min-height: calc(100vh - 14rem);
+  display: grid;
+  grid-template-columns: 30rem 1fr;
+  grid-gap: 1rem;
+
+  @media only screen and (max-width: 1280px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 1rem;
+  }
+}
+
+.Left {
+  display: grid;
+  grid-template-rows: 18rem 1fr;
+  grid-gap: 1rem;
+
+  .Top {
+    position: relative;
+    padding: 0.7rem 0.7rem 0.7rem 0.7rem;
+    background-color: white;
+    box-shadow: var(--shadow-mid);
+    border-radius: 1rem;
+
+    .MainImage {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 1rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+
+  .Bottom {
+    position: relative;
+    background-image: url("/Images/Home/bg_shape3_Mobile.svg");
+    background-color: white;
+    box-shadow: var(--shadow-mid);
+    padding: 2rem;
+    border-radius: 1rem;
+
+    .Heading {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 2.5rem;
+
+      h1 {
+        font-size: 2.2rem;
+        font-weight: 400;
+        margin-left: 1rem;
+      }
+    }
+
+    .CreatorName,
+    .Description,
+    .ProjectLink,
+    .GithubLink,
+    .CreatedAt,
+    .Technologies {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .CreatorName {
+      img {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: #707070;
+      }
+    }
+
+    .Description {
+      align-items: flex-start;
+
+      img {
+        width: 2.5rem;
+        height: 2.5rem;
+        object-fit: cover;
+      }
+
+      p {
+        width: calc(100% - 3rem);
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: #707070;
+        max-height: 28rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+        scrollbar-width: thin;
+        scrollbar-color: var(--main-color) #ddd;
+
+        /* width */
+        &::-webkit-scrollbar {
+          width: 5px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+          box-shadow: inset 0 0 5px grey;
+          border-radius: 10px;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background: var(--main-color);
+          border-radius: 10px;
+        }
+      }
+    }
+
+    .ProjectLink,
+    .GithubLink {
+      img {
+        width: 2.5rem;
+        height: 2.5rem;
+        object-fit: cover;
+      }
+
+      a {
+        width: calc(100% - 3rem);
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: #707070;
+      }
+    }
+
+    .CreatedAt {
+      img {
+        width: 2.5rem;
+        height: 2.5rem;
+        object-fit: cover;
+      }
+
+      p {
+        width: calc(100% - 3rem);
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: #707070;
+      }
+    }
+
+    .Technologies {
+      align-items: flex-start;
+
+      img {
+        width: 2.5rem;
+        height: 2.5rem;
+        object-fit: cover;
+      }
+
+      p {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        width: calc(100% - 3rem);
+
+        span {
+          background-color: #fff;
+          box-shadow: 0 0 4px 0 rgba(151, 71, 255, 0.2);
+          padding: 0.4rem 1rem;
+          border-radius: 0.3rem;
+          font-size: 1.2rem;
+          font-weight: 400;
+          color: var(--main-color);
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1280px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content;
+
+
+    .Top {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    .Bottom {
+      padding: 3rem;
+      background-image: none;
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      display: flex;
+      flex-wrap: wrap;
+      opacity: .9;
+
+      & > * {
+        width: 100%;
+        height: min-content;
+      }
+    }
+  }
+
+}
+
+.Right {
+  position: relative;
+  display: grid;
+  grid-template-rows: 40rem 40rem;
+  grid-gap: 1rem;
+
+  .Slider_Arrows {
+    position: absolute;
+    top: 35.5rem;
+    right: 1rem;
+
+    button {
+      background-color: white;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      padding: 0.5rem;
+      box-shadow: var(--shadow-small);
+      margin: 0 0.3rem;
+    }
+  }
+
+  .Images {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, 100%);
+    grid-column-gap: 5rem;
+    align-items: flex-start;
+    background-color: white;
+    border-radius: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: var(--shadow-mid);
+    scrollbar-width: thin;
+    scrollbar-color: var(--main-color) #ddd;
+
+    /* width */
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey;
+      border-radius: 10px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: var(--main-color);
+      border-radius: 10px;
+    }
+
+    .Image {
+      position: relative;
+      width: 100%;
+      height: min-content;
+      display: none;
+
+      span {
+        position: initial !important;
+        min-height: 100% !important;
+        min-width: 100% !important;
+
+        img {
+          position: static !important;
+          width: 100% !important;
+          height: 100% !important;
+          cursor: zoom-in;
+        }
+      }
+
+      &.Active {
+        display: block;
+      }
+    }
+  }
+
+  .Video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-mid);
+    overflow: hidden;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 0.5rem;
+    }
+
+    &_Overflow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & > span {
+        cursor: pointer;
+      }
+    }
+
+    &.IsPlaying {
+      .Video_Overflow {
+        display: none;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    grid-template-rows:  35rem 36rem;
+
+    .Slider_Arrows {
+      top: 30.5rem;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    grid-template-rows:  min-content min-content;
+
+    .Images,
+    .Video {
+      max-height: 20rem;
+    }
+
+    .Slider_Arrows {
+      top: 40%;
+    }
+  }
+}

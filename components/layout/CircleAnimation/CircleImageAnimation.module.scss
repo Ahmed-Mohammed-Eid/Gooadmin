@@ -1,0 +1,18 @@
+.circleImageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    padding: 1rem;
+    border-radius: 50px;
+    background-color: #ffffff;
+    overflow: hidden;
+    // animation: rotate 5s infinite linear;
+
+    & > span {
+        width: 80px; /* Adjust the size of the images */
+        height: 80px;
+        border-radius: 50%;
+        animation: scale 5s infinite linear;
+    }
+}

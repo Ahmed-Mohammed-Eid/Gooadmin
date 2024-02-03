@@ -1,0 +1,83 @@
+.BlogCard{
+    max-width: 35rem;
+    min-width: 28rem;
+    width: 100%;
+    padding: 1rem 1rem 1.5rem;
+    display: inline-block;
+    background-color: white;
+    box-shadow: var(--shadow-mid);
+    border-radius: 3px;
+
+    &_Image {
+        position: relative;
+        height: 20rem;
+        margin-bottom: 2rem;
+        border-radius: 3px;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    h3 {
+        padding: 1rem;
+        width: 15rem;
+        background-color: #333;
+        margin-left: 1rem;
+    }
+
+    &_CategoriesContainer{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1rem;
+        height: 6.5rem;
+        overflow: hidden;
+        align-items: baseline;
+    }
+
+    &_Category{
+        margin: 0 0.5rem 0.5rem 0;
+        width: 5rem;
+        height: 1.5rem;
+        background-color: #333;
+        border-radius: 3px;
+
+        &:nth-child(1){
+            width: 10rem;
+            margin-left: 0;
+        }
+
+        &:last-child{
+            margin-right: 0;
+            width: 8rem;
+        }
+    }
+}
+
+// Media Queries Part
+@media only screen and (max-width: 1536px) {
+    .BlogCard{
+        max-width: 30rem;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .BlogCard {
+        max-width: 35rem;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 600px) {
+    .BlogCard {
+        max-width: 35rem;
+        width: 100%;
+    }
+}
+
+// Skelton animation
+@keyframes skelton {
+    0% {
+        background-color: hsl(200, 20%, 70%);
+    }
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}

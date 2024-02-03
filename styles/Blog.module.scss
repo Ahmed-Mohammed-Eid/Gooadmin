@@ -1,0 +1,342 @@
+.ContentContainer {
+    display: grid;
+    grid-template-columns: 30% calc(70% - 1rem);
+    grid-column-gap: 1rem;
+    padding-top: 3rem;
+    min-height: calc(100vh - 14rem);
+
+    .ContentFilter {
+        border-radius: 1rem;
+        grid-column: 1 / 2;
+
+
+        @media screen and (min-width: 1281px) {
+            position: sticky;
+            top: 1rem;
+            align-self: flex-start;
+        }
+
+
+        .Create_Button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 3rem;
+            width: 100%;
+            background-color: white;
+            margin-bottom: 0.5rem;
+            border: 1px solid #eee;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-mid);
+            cursor: pointer;
+            transition: transform .2s ease-in-out;
+
+            &:active{
+                transform: scale(0.98);
+            }
+        }
+    }
+
+    .ContentCards {
+        background-color: white;
+        border-radius: 1rem;
+        box-shadow: var(--shadow-mid);
+        grid-column: 2 / 3;
+    }
+
+    .Filter {
+        &_Search {
+            padding: 4rem 3rem;
+            width: 100%;
+            background-color: white;
+            margin-bottom: .5rem;
+            border-radius: 1rem 1rem 0 0;
+            box-shadow: var(--shadow-mid);
+
+            input {
+                width: 100%;
+                padding: 1rem;
+                border: none;
+                outline: none;
+                border-bottom: 1px solid #333333;
+
+                &:focus {
+                    border-bottom: 1px solid var(--heighlight-color);
+                }
+            }
+        }
+
+        //    Category
+        &_Category {
+            padding: 3rem;
+            width: 100%;
+            background-color: white;
+            margin-bottom: .5rem;
+            box-shadow: var(--shadow-mid);
+
+            .Category_Container {
+                margin-bottom: 2rem;
+            }
+
+            .Category_Button {
+                padding: .7rem 1.5rem;
+                margin-left: 0.5rem;
+                cursor: pointer;
+            }
+
+            .Category_Item {
+                margin: .5rem;
+                padding: .7rem 1rem;
+                background-color: white;
+                text-transform: capitalize;
+                box-shadow: var(--shadow-mid);
+                border: 0;
+                cursor: pointer;
+
+                &.Active {
+                    box-shadow: inset var(--shadow-mid);
+                    color: #999999;
+                }
+            }
+
+        }
+
+        // Date
+        &_Date {
+            padding: 3rem;
+            width: 100%;
+            background-color: white;
+            margin-bottom: 1rem;
+            border-radius: 0 0 1rem 1rem;
+            box-shadow: var(--shadow-mid);
+
+            .Date_Container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .Date_Item {
+                margin: .5rem;
+                padding: .7rem 1rem;
+                background-color: white;
+                box-shadow: var(--shadow-mid);
+                border: 0;
+                cursor: pointer;
+
+                &.Active {
+                    box-shadow: inset var(--shadow-mid);
+                    color: #999999;
+                }
+            }
+
+        }
+
+        // Button
+        &_Apply {
+            justify-content: center;
+            align-items: center;
+            gap: .5rem;
+            padding: 1rem 3rem;
+            width: 100%;
+            color: white;
+            background-color: var(--main-color);
+            text-transform: uppercase;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-mid);
+            cursor: pointer;
+
+            svg {
+                width: 20px;
+                height: 20px;
+
+                path {
+                    stroke: white;
+                }
+            }
+        }
+    }
+
+    .Toggle_Filter {
+        display: none;
+        align-items: center;
+        width: 5rem;
+        padding: 1rem 0;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        div {
+            position: relative;
+            width: 1.6rem;
+            height: 2rem;
+
+            span {
+                position: absolute;
+                display: inline-block;
+                width: 1.6rem;
+                height: 2px;
+                background-color: var(--main-color);
+                top: 1rem;
+                left: 0rem;
+
+                &:nth-child(1) {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+
+        p {
+            display: inline-block;
+            margin-left: 3rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+    }
+
+    .ContentCards {
+        position: relative;
+        background-image: url("/Images/Home/bg_shape2_Mobile.svg");
+        padding: 5rem;
+        margin-bottom: 3rem;
+
+        h1 {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            font-family: var(--main-font);
+            display: flex;
+            align-items: center;
+        }
+
+        .Cards_Container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-row-gap: 1rem;
+            max-width: 80rem;
+            margin: auto;
+
+
+            & > a {
+                display: -webkit-flex;
+                justify-self: center;
+                color: #000000;
+                transition: transform 0.2s ease-in-out;
+                text-decoration: none;
+
+                &:hover {
+                    transform: translateY(-.5rem);
+                }
+
+                article {
+                    max-width: 35rem;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1280px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr;
+        grid-row-gap: 1rem;
+        grid-column-gap: initial;
+
+        .ContentFilter {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            padding: 3rem 5rem;
+            background-color: white;
+            box-shadow: var(--shadow-mid);
+        }
+
+        .ContentCards {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+
+            h1 {
+                display: none;
+            }
+        }
+
+        .Toggle_Filter {
+            display: flex;
+        }
+
+        .Filter {
+            max-height: 4rem;
+            transition: max-height .4s ease-in-out;
+
+            &_Search,
+            &_Category,
+            &_Date {
+                display: none;
+            }
+
+            &_Apply {
+                display: none;
+            }
+
+            &.Open {
+                max-height: initial;
+
+                .Toggle_Filter div span:nth-child(1) {
+                    display: none;
+                }
+
+                .Filter_Search,
+                .Filter_Category,
+                .Filter_Date {
+                    display: block !important;
+                }
+
+                .Filter_Apply {
+                    display: flex;
+                }
+
+                .Toggle_Filter {
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1024px) {
+        .ContentCards {
+            .Cards_Container {
+                grid-column-gap: 2rem;
+                grid-row-gap: 2rem;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .ContentCards {
+            padding: 5rem 2rem;
+
+            .Cards_Container {
+                grid-column-gap: 2rem;
+                grid-row-gap: 2rem;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 650px) {
+        .ContentFilter {
+            padding: 3rem 2rem;
+        }
+        .Filter .Filter_Category .Category_Item {
+            font-size: 1.2rem;
+        }
+
+        .ContentCards {
+            .Cards_Container {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}

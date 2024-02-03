@@ -1,0 +1,250 @@
+
+.Navbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    background-image: linear-gradient(
+        to bottom right,
+        var(--main-color),
+        var(--gradient-color)
+    );
+    padding: 0.5rem 4rem 0.5rem 2rem;
+    text-align: center;
+    margin: 0 auto;
+
+    &__left {
+        max-width: 15rem;
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+    }
+
+    &__Logo {
+        font-size: 2.5rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        color: var(--color-white);
+        text-decoration: none;
+    }
+
+    &__List {
+        position: relative;
+        display: flex;
+        align-items: center;
+        list-style: none;
+        margin-right: 2rem;
+        transform: perspective(800px);
+
+        a {
+            position: relative;
+            font-size: 1.3rem;
+            text-decoration: none;
+            display: inline-block;
+            padding: 1rem 1.5rem;
+            color: transparent;
+            text-transform: uppercase;
+            z-index: 2;
+            transition: all 0.5s ease-in-out;
+            transform-style: preserve-3d;
+
+            // The style of link
+            &::before {
+                content: attr(title);
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 1rem 1.5rem;
+                background-color: #ffffff26;
+                color: var(--color-white);
+                border: 1px solid var(--main-color);
+                transition: all 0.3s ease-in-out;
+                transform-origin: right;
+                transform: translateY(-100%) rotateX(90deg);
+            }
+
+            &::after {
+                content: attr(title);
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 1rem 1.5rem;
+                background-color: transparent;
+                color: white;
+                transition: all 0.3s ease-in-out;
+                transform-origin: left;
+                transform: translateY(0) rotateX(0);
+            }
+
+            // When Hovering a link
+            &:hover::after {
+                transform: translateY(100%) rotateX(90deg);
+            }
+
+            &:hover::before {
+                transform: translateY(0%) rotateX(0);
+            }
+
+            // When Page is Active
+            &.Link__Active::after {
+                transform: translateY(100%) rotateX(90deg);
+            }
+
+            &.Link__Active::before {
+                transform: translateY(0%) rotateX(0);
+            }
+        }
+    }
+
+    &__Avatar {
+        min-width: 4rem;
+        min-height: 4rem;
+        max-width: 4rem;
+        max-height: 4rem;
+        border-radius: 50%;
+        border: 2px solid white;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-black);
+            opacity: 0.1;
+        }
+    }
+
+    &__Login {
+        button {
+            position: relative;
+            cursor: pointer;
+            background-color: transparent;
+            padding: 1rem 2.5rem;
+            border: 2px dotted white;
+            outline: 0;
+            margin-left: 2rem;
+            text-transform: uppercase;
+            box-shadow: 0 0 0.5rem rgba(#000, 0.26);
+            border-radius: 40px;
+            overflow: hidden;
+
+            span {
+                position: relative;
+                color: var(--color-white);
+                z-index: 2;
+                transition: color 0.2s ease-in-out;
+            }
+
+            &:hover span {
+                color: var(--main-color);
+            }
+
+            &:active {
+                box-shadow: inset 0 0 0.5rem rgba(#000, 0.26);
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background-color: var(--color-white);
+                transition: left 0.2s ease-in-out;
+                z-index: 1;
+            }
+
+            &:hover::after {
+                left: 0;
+            }
+        }
+    }
+
+    &__Options {
+        position: absolute;
+        bottom: 0;
+        right: 4rem;
+        height: 30rem;
+        width: 20rem;
+        transform: translateY(103%);
+        background-color: var(--color-white);
+        box-shadow: 0 0 0.6rem rgba(#000, 0.26);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+        z-index: 1000;
+
+        h3{
+            margin-top: 3rem;
+            font-weight: 500;
+        }
+
+        span.Beauty_Span {
+            display: block;
+            width: 4rem;
+            height: 4rem;
+            background-color: var(--main-color);
+            position: absolute;
+
+            &:nth-of-type(1) {
+                top: 0;
+                left: 0;
+                clip-path: polygon(0 0, 0 100%, 100% 0);
+            }
+            &:nth-of-type(2) {
+                top: 0;
+                right: 0;
+                clip-path: polygon(0 0, 100% 100%, 100% 0);
+            }
+            &:nth-of-type(3) {
+                bottom: 0;
+                left: 0;
+                clip-path: polygon(0 0, 100% 100%, 0 100%);
+            }
+            &:nth-of-type(4) {
+                bottom: 0;
+                right: 0;
+                clip-path: polygon(100% 0, 100% 100%, 0 100%);
+            }
+        }
+
+        &__Active {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+
+
+.ButtonsContainer{
+    margin: 6rem auto;
+    width: 20rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

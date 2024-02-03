@@ -1,0 +1,81 @@
+.Categories{
+    position: relative;
+    height: 5rem;
+    z-index: 400;
+    margin-bottom: 2rem;
+
+    &_Input {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        border: 0;
+        box-shadow: inset var(--shadow-mid);
+    }
+
+    .Result_Container{
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        bottom: 1rem;
+        right: 1rem;
+        background-color: white;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        pointer-events: none;
+        
+        span{
+            padding: .3rem 1rem;
+            border: 1px solid var(--main-color);
+            background-color: var(--main-color);;
+            color: white;
+            z-index: 600;
+            font-size: 1.3rem;
+            margin-right: .5rem;
+            border-radius: 2.5rem;
+            pointer-events:none;
+            cursor: pointer;
+        }
+    }
+
+    &_Arrow {
+        position: absolute;
+        top: 55%;
+        right: 1rem;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
+    &_Dropdown {
+        position: absolute;
+        bottom: -1rem;
+        left: 0;
+        width: 100%;
+        transform: translateY(100%);
+        padding: 2rem;
+        max-height: 22rem;
+        overflow-y: scroll;
+        box-shadow: 0 0 0.5rem rgba(#000, 0.16);
+        background-color: white;
+        display: block;
+
+        & p {
+            text-transform: capitalize;
+            display: block;
+            padding: 0.7rem 1rem;
+            cursor: pointer;
+            color: #000;
+
+            &:hover {
+                background-color: rgba(#000, 0.06);
+            }
+        }
+
+        &__Selected{
+            color: #c7c7c7 !important;
+        }
+    }
+}

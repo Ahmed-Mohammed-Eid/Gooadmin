@@ -1,0 +1,554 @@
+.ContentContainer {
+    min-height: calc(100vh - 14rem);
+}
+
+.Grid {
+    display: grid;
+    grid-template-columns: 36rem 1fr;
+    min-height: calc(100vh - 14rem);
+    grid-gap: 1rem;
+    margin: 0 auto;
+
+    &_Left {
+        display: grid;
+        grid-template-rows: 36rem 1fr;
+        grid-gap: 1rem;
+    }
+
+    // IMAGE
+    .ImagePart {
+        position: relative;
+        background: #fff;
+        border-radius: 1rem;
+        box-shadow: var(--shadow-mid);
+        overflow: hidden;
+        padding: 1rem;
+
+        & > span {
+            position: absolute;
+            z-index: 1;
+
+            &:first-child {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                clip-path: polygon(50% 0, 0 0, 0 50%);
+                background-color: var(--heighlight-color);
+            }
+
+            &:nth-child(2) {
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                clip-path: polygon(100% 50%, 50% 100%, 100% 100%);
+                background-color: var(--heighlight-color);
+            }
+        }
+
+        &_C1 {
+            position: relative;
+            background-color: #f5f5f5;
+            padding: 1.2rem;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            border-radius: .5rem;
+            box-shadow: var(--shadow-mid);
+        }
+
+        &_C2 {
+            position: relative;
+            background-color: white;
+            padding: .5rem;
+            width: 100%;
+            height: 100%;
+            border-radius: .5rem;
+            box-shadow: var(--shadow-mid);
+        }
+    }
+
+    //INFO
+    .InfoPart {
+        position: relative;
+        grid-row: 2 / 3;
+        background-color: #ffffff;
+        border-radius: 1rem;
+        box-shadow: var(--shadow-mid);
+        padding: 3rem;
+        height: 100%;
+        min-height: 53.1rem;
+        overflow: hidden;
+
+        // TEXT
+        &_Text {
+
+            & > h1 {
+                font-family: var(--main-font);
+                font-size: 3rem;
+                font-weight: normal;
+                text-transform: uppercase;
+                margin-bottom: 3rem;
+            }
+
+            & > p {
+                margin-top: 1rem;
+                font-size: 2.2rem;
+                color: #707070;
+                line-height: 1;
+
+                &:nth-of-type(2) {
+                    margin-bottom: 3rem;
+                }
+            }
+        }
+
+        // SOCIAL
+        &_Social {
+            position: absolute;
+            right: 2rem;
+            bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 1rem;
+        }
+
+        // CV
+        &_CV {
+
+            button {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 10rem;
+                height: 10rem;
+                padding: 2rem 2rem 0 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2.3rem;
+                color: #FFF89B;
+                border-top-right-radius: 100%;
+                background-color: #720B9B;
+                z-index: 2;
+                cursor: pointer;
+                border: 0;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0px;
+                    left: 0px;
+                    width: 12rem;
+                    height: 12rem;
+                    background-color: #720B9B20;
+                    border-top-right-radius: 100%;
+                    transition: .3s ease-in-out;
+                    z-index: -1;
+                }
+
+                &:hover::before {
+                    width: 13rem;
+                    height: 13rem;
+                    background-color: #720B9B40;
+                }
+            }
+        }
+    }
+
+
+    // RIGHT
+    &_Right {
+        background-color: white;
+        border-radius: 1rem;
+        box-shadow: var(--shadow-mid);
+
+        & > h2 {
+            font-family: var(--main-font);
+            font-size: 3rem;
+            font-weight: 400;
+            padding: 5rem 4rem 0rem 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        & > h2 + p {
+            margin-bottom: 1.5rem;
+            color: #707070;
+            padding: 0rem 4rem 0rem 4rem;
+        }
+    }
+
+    // Personal Info
+    .PersonalInfo {
+        display: flex;
+        gap: 3rem;
+        padding: 0rem 4rem 0rem 4rem;
+
+        &_Item {
+            width: 50%;
+
+            & > p.Description {
+                font-size: 1.8rem;
+                line-height: 1.5;
+            }
+
+            & > div {
+                width: 50%;
+            }
+
+            &:nth-child(2) {
+                display: flex;
+                align-items: baseline;
+            }
+        }
+
+        &_Item__Container {
+            padding: 0 1.5rem;
+            border-left: 2px solid var(--heighlight-color);
+        }
+
+        &_Item__Container__Item {
+            position: relative;
+            margin-bottom: 2rem;
+
+            h3 {
+                font-size: 2rem;
+                font-weight: 400;
+                margin-bottom: .5rem;
+            }
+
+            h3 ~ p {
+                font-size: 1.4rem;
+                color: #707070;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: .5rem;
+                left: -2.3rem;
+                width: 1.4rem;
+                height: 1.4rem;
+                background-color: white;
+                border: 2px solid var(--heighlight-color);
+                border-radius: 50%;
+            }
+        }
+    }
+
+    // How DO I Work
+    .HowDoIWork {
+        margin-top: 3.5rem;
+        padding: 4rem;
+        background-color: #720B9B10;
+
+        & > h2 {
+            font-family: var(--main-font);
+            font-size: 2.7rem;
+            font-weight: 400;
+            margin-bottom: 3rem;
+        }
+
+        &_Container {
+            display: flex;
+            gap: 3rem;
+
+            &__Item {
+                position: relative;
+                width: 25%;
+                min-height: 14rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 2rem;
+                background-color: white;
+                box-shadow: var(--shadow-small);
+                border-radius: 3px;
+
+                & > h3 {
+                    text-transform: uppercase;
+                    font-size: 2rem;
+                    font-weight: 400;
+                }
+
+                & > span {
+                    position: absolute;
+                    top: 1rem;
+                    left: 1rem;
+                    width: 4rem;
+                    height: 4rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 1rem;
+                    background-color: transparent;
+                    box-shadow: inset var(--shadow-mid);
+                    font-size: 2rem;
+                    color: #333333;
+                }
+            }
+        }
+    }
+
+    // Skills
+    .MySkills {
+        padding: 4rem 4rem 3rem 4rem;
+
+        & > h2 {
+            font-family: var(--main-font);
+            font-size: 2.7rem;
+            font-weight: 400;
+            margin-bottom: 3rem;
+        }
+
+        &_Container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+
+            &__Item {
+                position: relative;
+                padding: .7rem 1rem;
+                background-color: white;
+                box-shadow: 0 0 3px 0 #9747FF4C;
+                border-radius: 3px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1280px) {
+        grid-template-columns: 28rem 1fr;
+
+        &_Left {
+            grid-template-rows: 28rem 1fr;
+        }
+        //INFO
+        .InfoPart {
+
+            &_Text {
+
+                & > h1 {
+                    font-size: 2.7rem;
+                }
+
+                & > p {
+                    font-size: 2rem;
+                }
+            }
+
+            &_Social {
+                gap: .5rem;
+
+                button {
+                    width: 3.6rem;
+                    height: 3.6rem;
+                    padding: .8rem;
+                }
+            }
+        }
+
+        &_Right {
+            & > h2 {
+                font-size: 2.7rem;
+            }
+        }
+
+        // Personal Info
+        .PersonalInfo {
+
+            &_Item {
+                & > p.Description {
+                    font-size: 1.6rem;
+                }
+            }
+
+            &_Item__Container__Item {
+
+                h3 {
+                    font-size: 1.6rem;
+                }
+
+                h3 ~ p {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+
+        // How DO I Work
+        .HowDoIWork {
+
+            & > h2 {
+                font-size: 2.5rem;
+            }
+
+            &_Container {
+                gap: 1rem;
+
+                &__Item {
+
+                    & > span {
+                        width: 3rem;
+                        height: 3rem;
+                        padding: .5rem;
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+
+        // Skills
+        .MySkills {
+
+            & > h2 {
+                font-size: 2.5rem;
+            }
+
+            &_Container {
+
+                &__Item {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1024px) {
+        grid-template-columns: initial;
+        grid-template-rows: 28rem 1fr;
+
+        &_Left {
+            grid-template-rows: initial;
+            grid-template-columns: 28rem 1fr;
+        }
+
+        .ImagePart {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+
+        .InfoPart {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            min-height: initial;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        grid-template-rows: 57rem 1fr;
+
+        &_Left {
+            grid-template-rows: 28rem 28rem;
+            grid-template-columns: 28rem 1fr;
+        }
+
+        .ImagePart {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+
+        .InfoPart {
+            grid-column: 1 / 3;
+            grid-row: 2 / 3;
+            min-height: initial;
+        }
+    }
+
+    @media only screen and (max-width: 650px) {
+        .PersonalInfo {
+            flex-wrap: wrap;
+
+            &_Item {
+                width: 100%;
+
+            }
+        }
+
+        // How DO I Work
+        .HowDoIWork {
+
+            & > h2 {
+                font-size: 2.5rem;
+            }
+
+            &_Container {
+                gap: 1rem;
+                flex-wrap: wrap;
+
+                &__Item {
+                    min-width: 14rem;
+                    font-size: smaller;
+                }
+            }
+        }
+
+        .InfoPart {
+            overflow: visible;
+
+            // SOCIAL
+            &_Social {
+                right: 0;
+                bottom: initial;
+                top: -100%;
+            }
+
+            // CV
+            &_CV {
+
+                button {
+                    border-bottom-left-radius: 1rem;
+
+                    &::before {
+                        border-bottom-left-radius: 1rem;
+                    }
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: 380px) {
+
+        // RIGHT
+        &_Right {
+
+            & > h2 {
+                padding: 5rem 2rem 0rem 2rem;
+            }
+
+            & > h2 + p {
+                padding: 0rem 2rem 0rem 2rem;
+            }
+        }
+
+        .PersonalInfo {
+            padding: 0rem 2rem 0rem 2rem;
+        }
+
+            // How DO I Work
+        .HowDoIWork {
+            padding: 4rem 2rem;
+
+            &_Container {
+                gap: .5rem;
+
+                &__Item {
+                    min-width: 12rem;
+                    width: 49%;
+                }
+            }
+        }
+
+        .MySkills{
+            padding: 4rem 2rem 3rem 2rem;
+
+            &_Container {
+                gap: .5rem;
+
+                &__Item {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,21 @@
+.TextAreaCode{
+    width: 100%;
+    height: 20rem;
+    resize: vertical;
+    padding: 15px;
+    color: white;
+    background-color: #333;
+}
+
+.CodeSnippets_Wrapper {
+    select{
+        padding: 5px;
+        width: 160px;
+        text-transform: capitalize;
+        cursor: pointer;
+    }
+
+    option{
+        cursor: pointer;
+    }
+}
