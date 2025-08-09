@@ -30,3 +30,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# YoYo AI version control directory
+.yoyo/

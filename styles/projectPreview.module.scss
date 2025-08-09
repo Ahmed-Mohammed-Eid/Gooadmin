@@ -128,6 +128,9 @@
 
     .ProjectLink,
     .GithubLink {
+      max-width: 25rem;
+      overflow: hidden;
+
       img {
         width: 2.5rem;
         height: 2.5rem;
@@ -139,6 +142,12 @@
         font-size: 1.4rem;
         font-weight: 400;
         color: #707070;
+
+        // OVERFLOW ...
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
       }
     }
 

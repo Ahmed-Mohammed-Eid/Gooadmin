@@ -1,12 +1,13 @@
 module.exports = {
     apps: [
-        {
-            name: "portfolio",
-            script: "node_modules/next/dist/bin/next",
-            args: "start -p 3000", //running on port 3000
-            // cwd: "./apps/nextapp",
-            // instances: 1,
-            watch: false,
-        },
-    ],
-};
+      {
+        name: "gooadmin website",
+        script: "node",
+        args: "./node_modules/next/dist/bin/next start -p 3310",
+        env: {
+          NODE_ENV: "production"
+        }
+      }
+    ]
+  };
+  
